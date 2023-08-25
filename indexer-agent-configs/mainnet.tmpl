@@ -6,7 +6,7 @@ gateway:
 indexerOptions:
   address: "${STAKING_WALLET_ADDRESS_MAINNET}"
   mnemonic: "${OPERATOR_SEED_PHRASE_MAINNET}"
-  url: https://${INDEX_HOST}/
+  url: https://${INDEX_HOST_MAINNET}
   allocationManagementMode: ${INDEXER_AGENT_ALLOCATION_MANAGEMENT:-manual}
   rebateClaimThreshold: ${REBATE_CLAIM_THRESHOLD_MAINNET:-200}
   rebateClaimBatchThreshold: ${REBATE_CLAIM_BATCH_THRESHOLD_MAINNET:-2000}
@@ -18,12 +18,12 @@ indexerOptions:
   register: true
 
 transactionMonitoring:
-  gasPriceMax: ${INDEXER_AGENT_GAS_PRICE_MAX_ARBI_GOERLI:-50}
+  gasPriceMax: ${INDEXER_AGENT_GAS_PRICE_MAX_MAINNET:-50}
 
 subgraphs:
   networkSubgraph:
     url: ${INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT_MAINNET:-https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-arbitrum-goerli}
-  # deployment: ${NETWORK_SUBGRAPH_DEPLOYMENT_GOERLI}
+  # deployment: ${NETWORK_SUBGRAPH_DEPLOYMENT_MAINNET}
   epochSubgraph:
     url: ${INDEXER_AGENT_EPOCH_SUBGRAPH_ENDPOINT_MAINNET:-https://api.thegraph.com/subgraphs/name/graphprotocol/arb-goerli-epoch-block-oracle}
 
