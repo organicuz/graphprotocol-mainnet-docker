@@ -1,0 +1,31 @@
+networkIdentifier: arbitrum-one
+
+gateway:
+  url: https://gateway-arbitrum.network.thegraph.com
+
+indexerOptions:
+  address: "${STAKING_WALLET_ADDRESS_ARBITRUM}"
+  mnemonic: "${OPERATOR_SEED_PHRASE_ARBITRUM}"
+  url: https://${INDEX_HOST}/
+  allocationManagementMode: ${INDEXER_AGENT_ALLOCATION_MANAGEMENT:-manual}
+  rebateClaimThreshold: ${REBATE_CLAIM_THRESHOLD_ARBITRUM:-200}
+  rebateClaimBatchThreshold: ${REBATE_CLAIM_BATCH_THRESHOLD_ARBITRUM:-2000}
+  rebateClaimMaxBatchSize: ${REBATE_CLAIM_MAX_BATCH_SIZE_ARBITRUM:-100}
+  voucherRedemptionThreshold: ${VOUCHER_REDEMPTION_THRESHOLD_ARBITRUM:-200}
+  voucherRedemptionBatchThreshold: ${VOUCHER_REDEMPTION_BATCH_THRESHOLD_ARBITRUM:-2000}
+  voucherRedemptionMaxBatchSize: ${VOUCHER_REDEMPTION_MAX_BATCH_SIZE_ARBITRUM:-100}
+  allocateOnNetworkSubgraph: false
+  register: true
+
+transactionMonitoring:
+  gasPriceMax: ${INDEXER_AGENT_GAS_PRICE_MAX_ARBITRUM:-50}
+
+subgraphs:
+  networkSubgraph:
+    url: ${INDEXER_AGENT_NETWORK_SUBGRAPH_ENDPOINT_ARBITRUM:-https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-arbitrum}
+  # deployment: ${NETWORK_SUBGRAPH_DEPLOYMENT_ARBITRUM}
+  epochSubgraph:
+    url: ${INDEXER_AGENT_EPOCH_SUBGRAPH_ENDPOINT_ARBITRUM:-https://api.thegraph.com/subgraphs/name/graphprotocol/arbitrum-epoch-block-oracle}
+
+networkProvider:
+  url: "${TXN_RPC_ARBITRUM}"
